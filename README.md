@@ -1,16 +1,29 @@
-# life_sync
+# LifeSync
 
-A new Flutter project.
+**LifeSync** is an all-in-one well-being app designed to help you track your mood, build positive habits, and journal your daily reflections. Achieve balance and mindfulness as you navigate your well-being journey with our user-friendly features.
 
-## Getting Started
+## Features:
 
-This project is a starting point for a Flutter application.
+### 1. Dashboard:
+   - **Overview Card:** Daily summary of mood, completed habits, and recent journal entries.
+   - **Quick Actions:** Convenient input for mood and habit tracking directly from the dashboard.
 
-A few resources to get you started if this is your first Flutter project:
+### 2. Mood Tracker:
+   - **Visual Representation:** Color-coded system for easy mood tracking (e.g., happy, neutral, sad).
+   - **Daily Reflection:** Space for short notes about factors influencing your mood.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 3. Habit Tracker:
+   - **Simple Tracking:** List habits with checkboxes for each day, making it easy for users to mark completion.
+   - **Streak Counter:** Show users their current streak for each habit to encourage consistency.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 4. Journaling Function:
+   - **Quick Journal Entry:** Include a button on the dashboard for a daily journal entry, promoting consistent reflection.
+   - **Media Integration:** Allow users to attach photos or voice notes to their journal entries for a more personalized touch.
+
+### 5. Notifications and Reminders:
+   - **Custom Reminders:** Let users set reminders for habit tracking and journaling at times that suit their routine.
+   - **Reflective Prompts:** Send occasional prompts for users to reflect on their day or specific aspects of their well-being.
+
+### 6. User Feedback:
+   - **Feedback Forms:** Include a section for users to provide feedback on the app, allowing for continuous improvement.
+   - **In-App Tutorials:** Offer brief tutorials or tips when users first start using the app to guide them.
