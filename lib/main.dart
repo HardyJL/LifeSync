@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:life_sync/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,38 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: lifeSyncGreen),
         useMaterial3: true,
       ),
-      home: Scaffold(
-          // appBar: AppBar(
-          //   title: Text(
-          //     'Life Sync',
-          //     style: Theme.of(context).textTheme.headlineLarge,
-          //   ),
-
-          // ),
-          body: CustomScrollView(
-        physics: const AlwaysScrollableScrollPhysics(
-            parent: BouncingScrollPhysics()),
-        slivers: [
-          SliverAppBar(
-            // expandedHeight: 125,
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.more_horiz),
-              ),
-              const SizedBox(
-                width: 8,
-              )
-            ],
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text(
-                'Life Sync',
-                style: Theme.of(context).textTheme.headlineLarge,
-              ),
-            ),
-          )
-        ],
-      )),
+      home: const HomeScreen(),
     );
   }
 }
