@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int selectedIndex = 1;
+  int selectedIndex = 2;
 
   void _onItemTapped(int index) {
     setState(() {
@@ -67,12 +67,14 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SliverFillRemaining(
+              child: Padding(
+            padding: const EdgeInsets.all(12),
             child: [
               const HabitsScreen(),
               const HomeContent(),
               const MoodsScreen()
             ][selectedIndex],
-          )
+          ))
         ],
       ),
     );
@@ -103,70 +105,67 @@ class _HomeContentState extends State<HomeContent> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return Card(
-                    child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0),
-                        child: Text(
-                          entries[index].text,
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              return Card(
+                  child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 8.0),
+                      child: Text(
+                        entries[index].text,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
-                      const Divider(
-                        height: 1,
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              DateFormat(DateFormat.YEAR_ABBR_MONTH_WEEKDAY_DAY)
-                                  .format(entries[index].timeStamp)
-                                  .toString(),
-                              style: Theme.of(context).textTheme.labelSmall,
-                            ),
+                    ),
+                    const Divider(
+                      height: 1,
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            DateFormat(DateFormat.YEAR_ABBR_MONTH_WEEKDAY_DAY)
+                                .format(entries[index].timeStamp)
+                                .toString(),
+                            style: Theme.of(context).textTheme.labelSmall,
                           ),
-                          IconButton(
-                            padding: const EdgeInsets.all(0),
-                            constraints: const BoxConstraints(
-                              minHeight: 24,
-                              minWidth: 24,
-                            ),
-                            icon: const Icon(
-                              Icons.more_horiz_outlined,
-                            ),
-                            onPressed: () {},
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ));
-              },
-              itemCount: entries.length,
-            ),
+                        ),
+                        IconButton(
+                          padding: const EdgeInsets.all(0),
+                          constraints: const BoxConstraints(
+                            minHeight: 24,
+                            minWidth: 24,
+                          ),
+                          icon: const Icon(
+                            Icons.more_horiz_outlined,
+                          ),
+                          onPressed: () {},
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ));
+            },
+            itemCount: entries.length,
           ),
-          FloatingActionButton(
-            child: const Icon(
-              Icons.add,
-              grade: 240,
-            ),
-            onPressed: () {},
-          )
-        ],
-      ),
+        ),
+        FloatingActionButton(
+          child: const Icon(
+            Icons.add,
+            grade: 240,
+          ),
+          onPressed: () {},
+        )
+      ],
     );
   }
 }
